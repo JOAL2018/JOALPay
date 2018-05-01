@@ -11,8 +11,8 @@ Note: Status refers to the job title of the employee (defaulted as employee upon
 Here is the function that defines the above:
 
 >>> def add():
-...     import string
-...     import random
+     import string
+     import random
     
 ...     def password_generator(size=8, chars=string.ascii_uppercase + string.digits):
 ...         return ''.join(random.choice(chars) for i in range(size))
