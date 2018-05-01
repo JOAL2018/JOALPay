@@ -1,4 +1,4 @@
-* JOALPay is a library written in the programming language Python. 
+  JOALPay is a library written in the programming language Python. 
 It uses various functions to enable users to deliver the correct amount that employees
 are entitled to with great certainty. 
 
