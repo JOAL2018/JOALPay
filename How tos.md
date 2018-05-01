@@ -1,4 +1,4 @@
-## add employees
+## Add employees
 
 To add an employee to the system, type the following command:
 
@@ -55,7 +55,7 @@ Here is the function that defines the above:
         f.close()
         print("Added: " + name + "\n" + "Status: " + status + "\n" + "Log-in Username: " + username + "\n" + "Log-in Password: " +      password)    
 
-## log in
+## Log in/out
 
 To log in to the system, type the following:
 
@@ -112,7 +112,7 @@ Here is the function that defines the above:
 
 
 
-## view all employees
+## View all employees
 
 
 Here is how to view all the employees' data together:
@@ -138,7 +138,7 @@ Here is the function that defines the above:
 
 
 
-## edit details
+## Edit details
 
 To edit the details of any existing employee, type the following command:
 
@@ -187,7 +187,7 @@ Here is the function that defines the above:
             f.truncate()
 
 
-## payslip
+## Payslip
 
 Here is how to generate a payslip to later be printed; type:
 
@@ -286,7 +286,7 @@ a net income.
 
 
 
-## delete user
+## Delete user
 
 To delete a particular user from the system, type:
 
