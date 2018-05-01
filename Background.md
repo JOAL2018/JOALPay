@@ -2,7 +2,7 @@ JOALPay is a library written in the programming language Python.
 It uses various functions to enable users to deliver the correct amount that employees
 are entitled to with great certainty. 
 
-Inspiration?
+## Inspiration
 Being university students and having friends with part-time jobs theirselves, we 
 noticed that there's a gap in the market for an effective payroll system aimed at 
 small businesses where there are more likely to part-time employees. After questioning
@@ -10,7 +10,7 @@ our fellow students we realised that they weren't recieving their correct amount
 pay by the time it came to payday. We set out to create a system which efficiently
 keeps track of the amount of hours the employee deserves to get paid for. 
 
-Our Product 
+## Our Product 
 The product itself is an installable library within Python that can be easily accessed
 by following our installation instuctions. Once installed, the library can be then 
 used to create a database of employees who each have their own randomly generated 
@@ -24,7 +24,7 @@ database file (that the manager will input), the functions the JOALPay has to of
 can then calculate exactly how much that employee should be paid for that day and a 
 payslip can be created accordingly.
 
-Our Aims
+## Our Aims
 We hope to take the JOALPay library futher and after some careful programming we feel 
 that it would be able to incorporate a sort of hierarchy system where users of high 
 ranked status will be able to access different functions than their lower ranked 
