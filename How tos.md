@@ -10,50 +10,49 @@ Note: Status refers to the job title of the employee (defaulted as employee upon
 
 Here is the function that defines the above:
 
->>> def add():
-...     import string
-...     import random
+    def add():
+        import string
+        import random
     
-...     def password_generator(size=8, chars=string.ascii_uppercase + string.digits):
-...         return ''.join(random.choice(chars) for i in range(size))
-...     def username_generator(size=7, chars=string.digits):
-...         return "E"+''.join(random.choice(chars) for i in range(size))
+        def password_generator(size=8, chars=string.ascii_uppercase + string.digits):
+            return ''.join(random.choice(chars) for i in range(size))
+        def username_generator(size=7, chars=string.digits):
+            return "E"+''.join(random.choice(chars) for i in range(size))
 
-...     status = "Employee"
-...     username = username_generator()
-...     password = password_generator()
-...     name = input('Enter the name: ')
-...     while True:
-...         try:
-...             age = int(input('Enter the age: '))
-...         except ValueError:
-...             print("Invaild value.")
-...             continue
-...         else:
-...             break
-...     category = "A"
-...     if age > 65:
-...         category = "C"
-...     if age < 25:
-...         category = "H"
-...     if age < 21:
-...         category = "M"
-...     if age < 16:
-...         category = "X"
-...     while True:
-...         try:
-...             phonenum = int(input('Enter the phone number: '))
-...         except ValueError:
-...             print("Invaild value.")
-...             continue
-...         else:
-...             break
+        status = "Employee"
+        username = username_generator()
+        password = password_generator()
+        name = input('Enter the name: ')
+        while True:
+            try:
+                age = int(input('Enter the age: '))
+            except ValueError:
+                print("Invaild value.")
+                continue
+            else:
+                break
+        category = "A"
+        if age > 65:
+            category = "C"
+        if age < 25:
+            category = "H"
+        if age < 21:
+            category = "M"
+        if age < 16:
+            category = "X"
+        while True:
+            try:
+                phonenum = int(input('Enter the phone number: '))
+            except ValueError:
+                print("Invaild value.")
+                continue
+            else:
+                break
 
-...     f = open("employee.txt","a+")
-...     f.write(username + "-_-" + password + "-_-" + name + "-_-" + str(age) + "-_-0" + str(phonenum) + "-_-" + status + "-_-" + category + "\n")
-...     f.close()
-...     print("Added: " + name + "\n" + "Status: " + status + "\n" + "Log-in Username: " + username + "\n" + "Log-in Password: " + password)
-
+        f = open("employee.txt","a+")
+        f.write(username + "-_-" + password + "-_-" + name + "-_-" + str(age) + "-_-0" + str(phonenum) + "-_-" + status + "-_-" +       category + "\n")
+        f.close()
+        print("Added: " + name + "\n" + "Status: " + status + "\n" + "Log-in Username: " + username + "\n" + "Log-in Password: " +      password)    
 
 #log in
 
@@ -71,42 +70,42 @@ accumulates all hours recorded and the corresponding amount of money appears on 
 
 Here is the function that defines the above:
 
->>>def login():
->>>    import datetime
+    def login():
+        import datetime
     
->>>    username = input('Enter the username: ')
->>>    password = input('Enter the password: ')
->>>    log = ""
->>>    f1 = ""
->>>    with open("employee.txt") as f:
-...        for line in f:
-...            a,b,c,d,e,u,l = line.split("-_-")
-...            l,p = l.split("\n")                
-...            if (a == username and b == password):
-...                t = datetime.datetime.now().strftime("%y-%m-%d-%H-%M")
->>>    f.close()
->>>    with open("log.txt") as r:
-...        for line in r:
-...            a1,b1,c1,d1,e1,f1 = line.split(",") 
-...            f1,w = f1.split("\n")
-...            if (a1 == a and b1 == c):
-...                if f1 == "LogIn":
-...                    log = "LogOut"
-...                else:
-...                    log = "LogIn"
->>>    g = open("log.txt","a+")
->>>    g.write(a + "," + c + "," + d + "," + l + "," + t + "," + log + "\n")
->>>    g.close()
->>>    if u == "Employee":
-...        if log == "LogIn":
-...            print("Employee Logged in.")
-...        else:
-...            print("Employee Logged out.")
->>>    else:
-...        if log == "LogIn":
-...            print("Logged in.")
-...        else:
-...            print("Logged out.")
+        username = input('Enter the username: ')
+        password = input('Enter the password: ')
+        log = ""
+        f1 = ""
+        with open("employee.txt") as f:
+            for line in f:
+                a,b,c,d,e,u,l = line.split("-_-")
+                l,p = l.split("\n")                
+                if (a == username and b == password):
+                    t = datetime.datetime.now().strftime("%y-%m-%d-%H-%M")
+        f.close()
+        with open("log.txt") as r:
+            for line in r:
+                a1,b1,c1,d1,e1,f1 = line.split(",") 
+                f1,w = f1.split("\n")
+                if (a1 == a and b1 == c):
+                    if f1 == "LogIn":
+                        log = "LogOut"
+                    else:
+                        log = "LogIn"
+        g = open("log.txt","a+")
+        g.write(a + "," + c + "," + d + "," + l + "," + t + "," + log + "\n")
+        g.close()
+        if u == "Employee":
+            if log == "LogIn":
+                print("Employee Logged in.")
+            else:
+                print("Employee Logged out.")
+        else:
+            if log == "LogIn":
+                print("Logged in.")
+            else:
+                print("Logged out.")
 
 
 
@@ -123,17 +122,17 @@ This will list the attributes associated to every employee in the system.
 
 Here is the function that defines the above:
 
->>>def view():
->>>    with open("employee.txt") as f:
-...    for line in f:
-...        z,x,c,v,b,n,m = line.split("-_-")
-...        print("\n" + "Name: " + c + "\n" + 
-...                 "Username: " + z + "\n" +
-...                 "Password: " + x + "\n" +
-...                 "Age: " + v + "\n" +
-...                 "Phone Number: " + b + "\n" +
-...                 "Status: " + n + "\n" +
-...                 "Category: " + m + "\n")
+    def view():
+        with open("employee.txt") as f:
+        for line in f:
+            z,x,c,v,b,n,m = line.split("-_-")
+            print("\n" + "Name: " + c + "\n" + 
+                     "Username: " + z + "\n" +
+                     "Password: " + x + "\n" +
+                     "Age: " + v + "\n" +
+                     "Phone Number: " + b + "\n" +
+                     "Status: " + n + "\n" +
+                     "Category: " + m + "\n")
 
 
 
