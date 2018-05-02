@@ -101,12 +101,28 @@ Category: M
 You can see that the changed information has been updated  
 ### Logging in for work
 Once an employee's account has been made on the system they can login at the start of their shift and logout when they finish
-For example, if Jeff had a 6 hour shift from 10am until 4pm then first at 10am Jeff would login using the login() function :
+For example, if Jeff had a 6 hour shift from 10am until 4pm then first at 10am Jeff would login using the login() function and their username & password :
 ```python
-
-
-
+>>> j.login()
+Enter the username:
+>>> E4021512
+Enter the password:
+>>> YQ85VZCZ
+Employee Logged in.
 ```
+Now this employee is logged in<br/>
+When Jeff finishes working at 4pm he can use the same function to logout :
+```python
+>>> j.login()
+Enter the username:
+>>> E4021512
+Enter the password:
+>>> YQ85VZCZ
+Employee Logged out.
+```
+Now the time between logging in and out has been logged on the system so that the amount the employee should be payed can be calculated
+### Paying an employee
+To pay an employee, the pay() function is used<br/>
 
 
 
