@@ -84,6 +84,29 @@ Enter the new status:
 Enter the new category:
 >>>
 ```
+(Note that you can also change the employee's status and National Insurance category)
+The phone number has now been updated<br/>
+You can check this using the view() function :
+```python
+>>> j.view()
 
-If you need to change something later such as their phone number 
+Name: Jeff
+Username: E4021512
+Password: YQ85VZCZ
+Age: 18
+Phone Number: 08888888888
+Status: Employee
+Category: M
+```
+You can see that the changed information has been updated  
+### Logging in for work
+Once an employee's account has been made on the system they can login at the start of their shift and logout when they finish
+For example, if Jeff had a 6 hour shift from 10am until 4pm then first at 10am Jeff would login using the login() function :
+```python
+
+
+
+```
+
+
 
