@@ -63,9 +63,27 @@ Enter the password:
 ```
 Now enter the employee's password :
 ```python
-
-
-
+>>> YQ85VZCZ
+Please leave blank if you want to keep any of the information the same.
+Enter the new name:
 ```
+In the case of Jeff changing his phone number and nothing else, leave each field blank to make no changes<br/>
+Since Jeff's name is not changing, leave this blank (press enter)<br/>
+Do this until you are asked about the thing you want to edit
+```python
+>>> 
+Enter the new age: 
+>>> 
+Enter the new phone number:
+```
+Now, you can enter the new phone number for the employee :
+```python
+>>> 08888888888
+Enter the new status:
+>>> 
+Enter the new category:
+>>>
+```
+
 If you need to change something later such as their phone number 
 
