@@ -145,7 +145,7 @@ dtype: object
 ```
 Now, you can see that Jeff should be paid a total of £28.32<br/>
 ##### Modifying amount to pay employees
-# (WE WILL ADD A CUSTOM PAY OPTION)
+# (WE WILL ADD A CUSTOM PAY OPTION !!!!!!!)
 If you think an employee should be taxed less or more, or paid differently then you can change this<br/>
 Using the edit() function, you can change their 'National Insurance Category'<br/>
 The payrates default to the minimum wage for an employee's age group, but you can change them to pay more than required if you have access to the code<br/>
@@ -178,6 +178,7 @@ f.write("25,7.83\n21,7.38\n18,5.9\nU18,4.2\nAPP,3.7")
 ```
 This contains the information for the payrates of each age group<br/>
 
+
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ### Deleting an employee's information
@@ -192,7 +193,7 @@ Enter the password:
 Removed:E4021512-_-YQ85VZCZ-_-Jeff-_-18-_-08888888888-_-Employee-_-M
 ```
 Just enter their username and then password when prompted and the employee will no longer be on the system<br/>
-To check they are gone use : 
+To check they are gone, use : 
 ```python
 j.view()
 ```
