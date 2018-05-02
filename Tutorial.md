@@ -32,5 +32,20 @@ Log-in Password: YQ85VZCZ
 ```
 Looking at the output, a new employee has been created<br/>
 Note the Username and Password as they are needed by the employee to login for work
+## Now you can view this employee's information as well as for anyone else you add 
+To view the information on all of your employees, use the view() function<br/>
+For example :
+```python
+>>> j.view()
 
-## Now you ca
+Name: Jeff
+Username: E4021512
+Password: YQ85VZCZ
+Age: 18
+Phone Number: 01234567890
+Status: Employee
+Category: M
+```
+
+
+
