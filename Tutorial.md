@@ -123,6 +123,67 @@ Employee Logged out.
 Now the time between logging in and out has been logged on the system so that the amount the employee should be payed can be calculated
 ### Paying an employee
 To pay an employee, the pay() function is used<br/>
+```python
+>>> j.pay()
+Enter the username of the person that you want pay:
+```
+In this example, Jeff can be paid (for the 4 hours he had worked) so you enter Jeff's username :
+```python
+>>> E4021512
+
+Name                               Jeff
+Age                                  18
+National Insurance Category           M
+Number of Hours Worked                6
+Date                           02/05/18
+Pay Rate(based on age)              5.9
+Gross Pay                          35.4
+Income Tax                         7.08
+National Insurance                    0
+Net Pay                           28.32
+dtype: object
+```
+Now, you can see that Jeff should be paid a total of £28.32<br/>
+##### Modifying amount to pay employees
+If you think an employee should be taxed less or more, or paid differently then you can change this<br/>
+Using the edit() function, you can change their 'National Insurance Category'<br/>
+The payrates default to the minimum wage for an employee's age group, but you can change them to pay more than required if you have access to the code<br/>
+You will have to modify the code in the file '__init__.py'<br/>
+This is what the code looks like within this file : 
+```python
+from .addemployee import add
+from .payemployee import pay
+from .reademployee import login
+from .deleteemployee import delete
+from .editemployee import edit
+from .viewemployee import view
+
+with open("log.txt", "a+") as f:
+    log = f.read() 
+    f.write(log)
+
+with open("employee.txt", "a+") as f:
+    emp = f.read()
+    f.write(emp)
+
+with open("payrates.txt", "w") as f:
+    f.write("25,7.83\n21,7.38\n18,5.9\nU18,4.2\nAPP,3.7")
+
+print("JOAL IMPORTED")
+```
+The relevant part is :
+```python
+f.write("25,7.83\n21,7.38\n18,5.9\nU18,4.2\nAPP,3.7")
+```
+This contains the information for the payrates of each age group<br/>
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Deleting an employee's information
+To remove an employee from the system use the delete() function<br/>
+
+
+
 
 
 
