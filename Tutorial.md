@@ -182,11 +182,11 @@ f.write("25,7.83\n21,7.38\n18,5.9\nU18,4.2\nAPP,3.7")
 ```
 This contains the information for the payrates of each age group<br/>
 This corresponds to : 
-'25 +' payed £7.83 per hour<br/>
-'21 - 24' payed £7.38 per hour<br/>
-'18 - 20' payed £5.90 per hour<br/>
-'Under 18s' payed £4.20 per hour<br/>
-'Apprentices' payed £3.70 per hour<br/>
+'25 +' paid £7.83 per hour<br/>
+'21 - 24' paid £7.38 per hour<br/>
+'18 - 20' paid £5.90 per hour<br/>
+'Under 18s' paid £4.20 per hour<br/>
+'Apprentices' paid £3.70 per hour<br/>
 Now the next time you run the '__init__.py' file (importing the library) the new payrates will be used
 ### Deleting an employee's information
 To remove an employee from the system use the delete() function<br/>
