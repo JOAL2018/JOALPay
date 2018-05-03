@@ -130,6 +130,8 @@ Enter the username of the person that you want pay:
 In this example, Jeff can be paid (for the 4 hours he had worked) so you enter Jeff's username :
 ```python
 >>> E4021512
+How much bonus do you want to give ?
+>>> 
 
 Name                               Jeff
 Age                                  18
@@ -137,6 +139,7 @@ National Insurance Category           M
 Number of Hours Worked                6
 Date                           02/05/18
 Pay Rate(based on age)              5.9
+Bonus                                 0
 Gross Pay                          35.4
 Income Tax                         7.08
 National Insurance                    0
@@ -145,7 +148,8 @@ dtype: object
 ```
 Now, you can see that Jeff should be paid a total of £28.32<br/>
 ##### Modifying amount to pay employees
-# (WE WILL ADD A CUSTOM PAY OPTION !!!!!!!)
+To pay more than the minimum wage, when asked 'How much bonus do you want to give ?' after entering the username of who you are paying, just enter how much more than the minimum wage you would like to pay<br/>
+For example, if you wanted to pay £7.90 per hour (before tax) in this case, since the original pay rate was £5.90, you would input '1.10'<br/>
 If you think an employee should be taxed less or more, or paid differently then you can change this<br/>
 Using the edit() function, you can change their 'National Insurance Category'<br/>
 The payrates default to the minimum wage for an employee's age group, but you can change them to pay more than required if you have access to the code<br/>
@@ -177,10 +181,12 @@ The relevant part is :
 f.write("25,7.83\n21,7.38\n18,5.9\nU18,4.2\nAPP,3.7")
 ```
 This contains the information for the payrates of each age group<br/>
-
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+This corresponds to : 
+'25 +' payed £7.83 per hour<br/>
+'21 - 24' payed £7.38 per hour<br/>
+'18 - 20' payed £5.90 per hour<br/>
+'Under 18s' payed £4.20 per hour<br/>
+'Apprentices' payed £3.70 per hour<br/>
 ### Deleting an employee's information
 To remove an employee from the system use the delete() function<br/>
 To delete Jeff in this example :
