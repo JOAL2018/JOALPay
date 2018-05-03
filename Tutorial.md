@@ -164,12 +164,10 @@ from .editemployee import edit
 from .viewemployee import view
 
 with open("log.txt", "a+") as f:
-    log = f.read() 
-    f.write(log)
+    f.write("")
 
 with open("employee.txt", "a+") as f:
-    emp = f.read()
-    f.write(emp)
+    f.write("")
 
 with open("payrates.txt", "w") as f:
     f.write("25,7.83\n21,7.38\n18,5.9\nU18,4.2\nAPP,3.7")
