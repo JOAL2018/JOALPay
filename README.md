@@ -4,6 +4,6 @@ JOALPay is a library created with the programming language Python that calculate
 ## Installation
 Firstly, you will need Anaconda to run the code. 
 https://www.anaconda.com/download/
-Once downloaded, run the installer and open the Anaconda Navigator. Launch Jupyter Notebook. Then, select New, followed by Python 3 notebook. From this notebook, you will be able to run all the code used in the system.
+Once downloaded, run the installer and open the Anaconda Navigator. Launch Jupyter Notebook. Then, select New, followed by Python 3 notebook. From this notebook, you will be able to run all the code used in the system. <br/>
 Note: The Jupyter Notebook can run Python code even without access to the internet.
 
