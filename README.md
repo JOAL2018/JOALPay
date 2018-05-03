@@ -8,5 +8,5 @@ Once downloaded, run the installer and open the Anaconda Navigator. Launch Jupyt
 Note: The Jupyter Notebook can run Python code even without access to the internet. <br/>
 # 2. Secondly, you will need to install our library.
 Download the JOALPay files and extract the folder to wherever you wish. Open the Anaconda prompt (find it using the search tool on your computer) and redirect the prompt to the JOALPay folder using: <br/>
-    cd *insert address of folder here*
+>>> cd *insert address of folder here*
 
