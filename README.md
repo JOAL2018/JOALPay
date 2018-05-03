@@ -15,6 +15,6 @@ Now type into the prompt:
 ```
 >>> python Setup.py develop 
 ```
-After this point, the library will be successsfully implemented into your device and you can open the Jupyter Notebook to use the code.
+After this point, the library will be successfully implemented into your device and you can open the Jupyter Notebook to use the code.
 ### 3. You may want to view the [tutorial.md](https://github.com/JOAL2018/JOALPay/blob/master/Tutorial.md) or the [howtos.md](https://github.com/JOAL2018/JOALPay/blob/master/How%20tos.md) file located within the docs folder of the library. This will provide a detailed description of how to use our library.
 
