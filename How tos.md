@@ -1,10 +1,10 @@
 ## Add employees
 
-To add an employee to the system, type the following command:
+To add an employee to the system, type the following command into a cell:
 
-    add()
+    j.add()
 
-The system will prompt the user to enter the details of the employee. Once inputted, the system will generate a
+and run the cell. The system will prompt the user to enter the details of the employee. Once inputted, the system will generate a
 unique password and the employee will be added to the database. The hourly rates for employees of certain age groups
 are recorded in the system.
 Note: Status refers to the job title of the employee (defaulted as employee upon creation).
@@ -66,11 +66,11 @@ def add():
 ```
 ## Log in/out
 
-To log in to the system, type the following:
+To log in to the system, type the following into a cell:
 
-    login()
+    j.login()
 
-The system will then prompt the user to input their name and password. If the details entered correspond to
+and run the cell. The system will then prompt the user to input their name and password. If the details entered correspond to
 any single employee's data already in the system, then that user will be logged in. The system will then record the
 time that the user logged in. 
 
@@ -133,11 +133,11 @@ def login():
 ## View all employees
 
 
-Here is how to view all the employees' data together:
+Here is how to view all the employees' data together; type into a cell:
 
-    view()
+    j.view()
 
-This will list the attributes associated to every employee in the system.
+and run it.This will list the attributes associated to every employee in the system.
 
 Here is the function that defines the above:
 
@@ -156,11 +156,11 @@ def view():
 ```
 ## Edit details
 
-To edit the details of any existing employee, type the following command:
+To edit the details of any existing employee, type the following command into a cell:
 
-    edit()
+    j.edit()
 
-This will prompt the user to enter their login details in order to edit information already stored in the 
+and run the cell. This will prompt the user to enter their login details in order to edit information already stored in the 
 system. 
 
 Here is the function that defines the above:
@@ -210,11 +210,11 @@ def edit():
 
 ## Payslip
 
-Here is how to generate a payslip to later be printed; type:
+Here is how to generate a payslip to later be printed; type into a cell:
 
-    pay()
+    j.pay()
 
-The system then prompts you to enter the username and password of the employee before continuing. Once the details
+and run the cell. The system then prompts you to enter the username and password of the employee before continuing. Once the details
 are entered, the payslip is created in an excel file.
 Note 1: Our system creates a file that must be opened externally (using Microsoft Excel) that can then be saved and 
 printed on any computer.
@@ -320,11 +320,11 @@ def pay():
 
 ## Delete user
 
-To delete a particular user from the system, type:
+To delete a particular user from the system, type into a cell:
 
-    delete()
+    j.delete()
 
-Then the system will ask you to enter your username and password of the user you wish to delete.
+and run the cell. Then the system will ask you to enter your username and password of the user you wish to delete.
 Note: The passwords for every employee is listed in the view section.
 
  ```python
