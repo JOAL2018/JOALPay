@@ -187,6 +187,7 @@ This corresponds to :
 '18 - 20' payed £5.90 per hour<br/>
 'Under 18s' payed £4.20 per hour<br/>
 'Apprentices' payed £3.70 per hour<br/>
+Now the next time you run the '__init__.py' file (importing the library) the new payrates will be used
 ### Deleting an employee's information
 To remove an employee from the system use the delete() function<br/>
 To delete Jeff in this example :
