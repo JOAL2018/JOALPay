@@ -87,12 +87,18 @@ def login():
     password = input('Enter the password: ')
     log = ""
     f1 = ""
+    age = ""
+    name = ""
+    category = ""
     found = False 
     with open("employee.txt") as f:
         for line in f:
             a,b,c,d,e,u,l = line.split("-_-")
             l,p = l.split("\n")               
             if (a == username and b == password):
+                name = c
+                age = d
+                category = l
                 t = datetime.datetime.now().strftime("%y-%m-%d-%H-%M")
                 found = True
     f.close()
@@ -102,7 +108,7 @@ def login():
         for line in r:
             a1,b1,c1,d1,e1,f1 = line.split(",") 
             f1,w = f1.split("\n")
-            if (a1 == a and b1 == c):
+            if (a1 == username and b1 == name):
                 if f1 == "LogIn":
                     log = "LogOut"
                 if f1 == "LogOut":
@@ -110,7 +116,7 @@ def login():
                 if f1 == "Registered":
                     log = "LogIn"
     g = open("log.txt","a+")
-    logg = a + "," + c + "," + d + "," + l + "," + t + "," + log + "\n"
+    logg = username + "," + name + "," + age + "," + category + "," + t + "," + log + "\n"
     g.write(logg)
     g.close()
     with open("log.txt") as f:
