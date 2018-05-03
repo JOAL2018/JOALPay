@@ -10,56 +10,65 @@ are recorded in the system.
 Note: Status refers to the job title of the employee (defaulted as employee upon creation).
 
 Here is the function that defines the above:
-
-    def add():
-        import string
-        import random
+```python
+def add():
+    import string
+    import random
+    import datetime
     
-        def password_generator(size=8, chars=string.ascii_uppercase + string.digits):
-            return ''.join(random.choice(chars) for i in range(size))
-        def username_generator(size=7, chars=string.digits):
-            return "E"+''.join(random.choice(chars) for i in range(size))
+    def password_generator(size=8, chars=string.ascii_uppercase + string.digits):
+        return ''.join(random.choice(chars) for i in range(size))
+    def username_generator(size=7, chars=string.digits):
+        return "E"+''.join(random.choice(chars) for i in range(size))
 
-        status = "Employee"
-        username = username_generator()
-        password = password_generator()
-        name = input('Enter the name: ')
-        while True:
-            try:
-                age = int(input('Enter the age: '))
-            except ValueError:
-                print("Invaild value.")
-                continue
-            else:
-                break
-        category = "A"
-        if age > 65:
-            category = "C"
-        if age < 25:
-            category = "H"
-        if age < 21:
-            category = "M"
-        if age < 16:
-            category = "X"
-        while True:
-            try:
-                phonenum = int(input('Enter the phone number: '))
-            except ValueError:
-                print("Invaild value.")
-                continue
-            else:
-                break
+    status = "Employee"
+    username = username_generator()
+    password = password_generator()
+    name = input('Enter the name: ')
+    while True:
+        try:
+            age = int(input('Enter the age: '))
+        except ValueError:
+            print("Invaild value.")
+            continue
+        else:
+            break
+    category = "A"
+    if age > 65:
+        category = "C"
+    if age < 25:
+        category = "H"
+    if age < 21:
+        category = "M"
+    if age < 16:
+        category = "X"
+    while True:
+        try:
+            phonenum = int(input('Enter the phone number: '))
+        except ValueError:
+            print("Invaild value.")
+            continue
+        else:
+            break
 
-        f = open("employee.txt","a+")
-        f.write(username + "-_-" + password + "-_-" + name + "-_-" + str(age) + "-_-0" + str(phonenum) + "-_-" + status + "-_-" +       category + "\n")
-        f.close()
-        print("Added: " + name + "\n" + "Status: " + status + "\n" + "Log-in Username: " + username + "\n" + "Log-in Password: " +      password)    
-
+    f = open("employee.txt","a+")
+    emp = username + "-_-" + password + "-_-" + name + "-_-" + str(age) + "-_-0" + str(phonenum) + "-_-" + status + "-_-" + category + "\n"
+    f.write(emp)
+    f.close()
+    with open("employee.txt") as f:
+        for line in f:
+            if emp in line:
+                assert emp == line
+    f.close()
+    g = open("log.txt","a+")
+    g.write(username + "," + name + "," + str(age) + "," + category + "," + datetime.datetime.now().strftime("%y-%m-%d-%H-%M") + ",Registered" + "\n")
+    print("Added: " + name + "\n" + "Status: " + status + "\n" + "Log-in Username: " + username + "\n" + "Log-in Password: " + password)
+```
 ## Log in/out
 
 To log in to the system, type the following:
 
-    log_in()
+    login()
 
 The system will then prompt the user to input their name and password. If the details entered correspond to
 any single employee's data already in the system, then that user will be logged in. The system will then record the
@@ -67,50 +76,59 @@ time that the user logged in.
 
 Using the function a second time will prompt the user to enter their details again. 
 This will log the user out and cause the system to record the time again. When the payslip is calculated, it 
-accumulates all hours recorded and the corresponding amount of money appears on the payslip.
+accumulates all hours recorded in that session and the corresponding amount of money appears on the payslip.
 
 Here is the function that defines the above:
-
-    def login():
-        import datetime
+```python
+def login():
+    import datetime
     
-        username = input('Enter the username: ')
-        password = input('Enter the password: ')
-        log = ""
-        f1 = ""
-        with open("employee.txt") as f:
-            for line in f:
-                a,b,c,d,e,u,l = line.split("-_-")
-                l,p = l.split("\n")                
-                if (a == username and b == password):
-                    t = datetime.datetime.now().strftime("%y-%m-%d-%H-%M")
-        f.close()
-        with open("log.txt") as r:
-            for line in r:
-                a1,b1,c1,d1,e1,f1 = line.split(",") 
-                f1,w = f1.split("\n")
-                if (a1 == a and b1 == c):
-                    if f1 == "LogIn":
-                        log = "LogOut"
-                    else:
-                        log = "LogIn"
-        g = open("log.txt","a+")
-        g.write(a + "," + c + "," + d + "," + l + "," + t + "," + log + "\n")
-        g.close()
-        if u == "Employee":
-            if log == "LogIn":
-                print("Employee Logged in.")
-            else:
-                print("Employee Logged out.")
+    username = input('Enter the username: ')
+    password = input('Enter the password: ')
+    log = ""
+    f1 = ""
+    found = False 
+    with open("employee.txt") as f:
+        for line in f:
+            a,b,c,d,e,u,l = line.split("-_-")
+            l,p = l.split("\n")               
+            if (a == username and b == password):
+                t = datetime.datetime.now().strftime("%y-%m-%d-%H-%M")
+                found = True
+    f.close()
+    if found == False:
+        return ("Not Found")
+    with open("log.txt") as r:
+        for line in r:
+            a1,b1,c1,d1,e1,f1 = line.split(",") 
+            f1,w = f1.split("\n")
+            if (a1 == a and b1 == c):
+                if f1 == "LogIn":
+                    log = "LogOut"
+                if f1 == "LogOut":
+                    log = "LogIn"
+                if f1 == "Registered":
+                    log = "LogIn"
+    g = open("log.txt","a+")
+    logg = a + "," + c + "," + d + "," + l + "," + t + "," + log + "\n"
+    g.write(logg)
+    g.close()
+    with open("log.txt") as f:
+        for line in f:
+            if logg in line:
+                assert logg == line
+    f.close()
+    if u == "Employee":
+        if log == "LogIn":
+            print("Employee Logged in.")
         else:
-            if log == "LogIn":
-                print("Logged in.")
-            else:
-                print("Logged out.")
-
-
-
-
+            print("Employee Logged out.")
+    else:
+        if log == "LogIn":
+            print("Logged in.")
+        else:
+            print("Logged out.")
+```
 
 ## View all employees
 
